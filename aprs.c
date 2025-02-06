@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
     // 检查参数
     if (argc != 6 || strcmp(argv[1], "--help") == 0) {
-        printf("用法: ./aprs <'ToCall-SSID'> <'FmCall-SSID'> <'Path1-SSID、Path2-SSID'> <'INFO'> <'Output Filename'>\n", argv[0]);
+        printf("用法: ./aprs <'ToCall-SSID'> <'FmCall-SSID'> <'Path1-SSID、Path2-SSID'> <'INFO'> <'Output Filename'>\n");
         return 1;
     }
 
@@ -185,9 +185,9 @@ int generate(const char *ToCallArg, const char *FmCallArg, const char *PathArg, 
     printf("INFO: %s\n\n", INFO);
 
     // 发送APRS协议帧
-    write_tone(0, 150);
+    write_tone(0, 200);
     transmit_APRS_frame(toCall, toSSID, fmCall, fmSSID, pathCall, pathSSID, INFO);
-    write_tone(0, 150);
+    write_tone(0, 200);
 
     // 计算数据大小并写入文件头
     uint32_t data_size = total_samples * sizeof(short);

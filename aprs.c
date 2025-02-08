@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
     double elapsed_time = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_nsec - start_time.tv_nsec) / 1e9;
     printf("程序运行时间: %lf 秒\n", elapsed_time);
 
-    return 1;
+    return 0;
 }
 
 // 主调制生成函数
